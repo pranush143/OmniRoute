@@ -763,3 +763,18 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+
+## Cross-agent autonomous execution addendum
+
+Preserve all existing OmniRoute functionality and architecture. Do not replace the application or remove working dashboard, API, provider catalog, routing/fallback, quotas, analytics, auth, CLI, Electron desktop, PWA, MCP, A2A, multimodal, integrations, docs, tests, or CI quality gates.
+
+Before work, read `docs/AUTONOMOUS_PLATFORM_BLUEPRINT.md` and `docs/PENDING_TASKS_01_27.md` when present, then inspect README, ROADMAP, package scripts, working tree, recent commits, and relevant code. Do not ask the user to repeat requirements already documented here. Infer routine implementation choices; record safe assumptions and continue. Ask only when a user-only authorization, secret, paid action, destructive operation, or materially ambiguous security/legal decision is required.
+
+For each task: inspect → implement the smallest complete compatible change → add/update tests → run relevant checks → inspect diff → update tracker with evidence → commit. Never weaken tests, security rules, or quality gates to get a green result. Never claim checks passed unless actually run. Never commit secrets or real environment files. If blocked, document the exact blocker and continue independent safe work.
+
+Requested direction: dynamic data-driven configuration and optional CMS/LMS adapters; authorized headless Chromium and Chrome DevTools Protocol diagnostics using existing Playwright infrastructure; open-source agent compatibility through existing abstractions, MCP and A2A; and portable instructions/handover for multiple AI coding agents. Evaluate Directus/Strapi/Payload for CMS and Moodle/Open edX for LMS only when concrete workflows justify them. Evaluate OpenHands, Open Interpreter, OpenCode, Aider, Continue, Cline, Roo Code, LangGraph, CrewAI and AutoGen as optional adapters, not mandatory dependencies.
+
+Browser sessions must be isolated, authorized, auditable, and least-privilege. Do not bypass CAPTCHAs, paywalls, access controls, or rate limits. Agent tools require explicit capability declarations, permissions, timeouts, resource limits, audit logs, and disable switches. Portable handover does not imply every vendor is connected or has credentials. Public deployments, billing changes, data deletion, and external account access require explicit user authorization.
+
+A feature is production-ready only after tests, security/permission checks, secret handling, failure/timeout behavior, observability, documentation, rollback/migration planning where relevant, and passing CI evidence. Keep the 27-workstream tracker honest: distinguish already satisfied, in progress, blocked, and verified complete.
